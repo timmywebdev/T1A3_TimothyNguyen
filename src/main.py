@@ -18,3 +18,6 @@ def reel_randomiser():
     Fore.LIGHTCYAN_EX + '$' + Fore.WHITE]
 
     return random.choice(symbols)
+
+def spinning(a, b, c):
+    print('\t\t   ------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
