@@ -23,6 +23,16 @@ class Items:
     lucky888_value = 8888
     jackpot_value = 10000
 
+def press_to_continue():
+    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
+    os.system('clear')
+    print()
+
+def press_to_lever():
+    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to pull the lever...\"'")
+    os.system('clear')
+    print()
+
 def reel_randomiser():
     symbols = [ Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE , Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE , Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE , Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE , Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE , 
     Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, 
@@ -35,11 +45,6 @@ def reel_randomiser():
 
 def spinning(a, b, c):
     print('\t\t   ------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
-
-def press_to_continue():
-    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
-    os.system('clear')
-    print()
 
 def spin_anim():
     for i in range(30):
