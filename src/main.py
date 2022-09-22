@@ -1,7 +1,7 @@
 import random
 import time
 import os
-from colorama import Fore
+from colorama import *
 
 class Game:
     current_bet = 0
@@ -89,7 +89,6 @@ def check_win(a, b, c):
         press_to_continue()
 
 def play():
-    colorama.init(autoreset=True)
     RUNNING = True    
 
     def landing():
@@ -122,3 +121,6 @@ def play():
                 print("\tWelcome to the Lucky Lion Slot Machine!\n Match 3 of the same symbols to win a multiplier of your bet!")
                 press_to_continue()
                 landing()
+
+
+play()
