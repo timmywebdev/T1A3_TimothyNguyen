@@ -1,6 +1,5 @@
 import os
 from colorama import Fore
-# from functions import *
 from game import *
 from classes import *
 from screens import *
