@@ -1,6 +1,27 @@
 import random
 import time
+import os
 from colorama import Fore
+
+class Game:
+    current_bet = 0
+    winnings = 0
+    credits = 0
+
+class Items:
+    jack = Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE
+    queen = Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE
+    king = Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE
+    ace =  Fore.LIGHTGREEN_EX + 'A' + Fore.WHITE
+    lucky888 =  Fore.LIGHTRED_EX + '8' + Fore.WHITE
+    jackpot = Fore.LIGHTCYAN_EX + '$' + Fore.WHITE
+
+    jack_value = 50
+    queen_value = 75
+    king_value = 100
+    ace_value = 200
+    lucky888_value = 8888
+    jackpot_value = 10000
 
 def reel():
     symbols = [ Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  
@@ -11,6 +32,11 @@ def reel():
     Fore.LIGHTCYAN_EX + '$' + Fore.WHITE]
 
     return random.choice(symbols)
+
+def press_to_continue():
+    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
+    os.system('clear')
+    print()
 
 def print_row(first, second, third):
     print('[ {} | {} | {} ]'.format(first, second, third,t=time.sleep(.15)), end='\r')
@@ -39,14 +65,13 @@ def round():
     return (first, second, third)
 
 def ask_to_play():
-    global stake
     while(True):
-        answer = input("You have £" + str(stake) + ". Would you like to play? y/n ")
+        answer = input("You have $" + str(Game.credits) + ". Would you like to play? y/n ")
         answer = answer.lower().strip()
         if(answer == "y"):
             return True
         elif(answer == "n"):
-            print("You ended the game with £" + str(stake) + " in your hand.")
+            print("You ended the game with $" + str(Game.credits) + " in your hand.")
             return False
         else:
             print("incorrect input - type either y or n")
@@ -88,22 +113,21 @@ def check_win(a, b, c):
         
 
 def play():
-    global stake
     want_to_play = ask_to_play()
-    while(stake >= 1 and want_to_play == True):
-        stake -= 1;
+    while(Game.credits >= 1 and want_to_play == True):
+        Game.credits -= 1;
         round1 = round()
         a, b, c = round1
         print('[ {} | {} | {} ]'.format(a,b,c))
         check_win(a, b, c)
         
-        if stake == 0:
+        if Game.credits == 0:
             print("Sorry mate, you ran out of money!")
             break;
         
         
         want_to_play = ask_to_play()
 
-stake = 20
+Game.credits = 20
 
 play()
