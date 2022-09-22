@@ -1,6 +1,6 @@
-classes:
+classes: 1
 - Game
-    - this contains important variables that are used throughout the machine
+    - this contains important variables that are used throughout the machine 
         - credits
         - winnings
         - bet amount
@@ -17,13 +17,13 @@ functions:
     - after deposit, take a bet amount
     - begin the function to spin the reel
 
-- def press_to_continue()
+- def press_to_continue() 2
     - from os, is to clear the screen and have a press any key to continue function
 
-- def landing()
+- def landing() 3 4 5
     - creates the layout of the user interface
 
-- def reel_randomiser()
+- def reel_randomiser() 
     - gets the list of symbols from Items Class
     - returns a random symbol from the list with random.choice()
 
