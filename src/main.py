@@ -21,3 +21,8 @@ def reel_randomiser():
 
 def spinning(a, b, c):
     print('\t\t   ------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
+
+def press_to_continue():
+    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
+    os.system('clear')
+    print()
