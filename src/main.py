@@ -1,4 +1,5 @@
 from colorama import Fore
+import os
 
 class Game:
     current_bet = 0
@@ -20,5 +21,7 @@ class Items:
     lucky888_value = 8888
     jackpot_value = 10000
 
-
-print(Items.jack)
+def press_to_continue():
+    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
+    os.system('clear')
+    print()
