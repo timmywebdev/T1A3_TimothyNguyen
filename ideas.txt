@@ -41,6 +41,11 @@ functions:
     - checks to see if first value == second value == third value
     - if they match then pay out according to which symbol it is
 
+- def landing()
+    - welcome page
+
+-def ending_win()/ending_loss()
+    - end screen
 
 py files grouping
 - main.py
@@ -56,7 +61,15 @@ py files grouping
     - Game
     - Items
 
-- landing.py
+- screens.py
     - landing()
     - press_to_continue()
     - press_to_lever()
+
+
+features:
+- start and end screens
+- deposit money
+- pick bet amount
+- feature that shows slot spinning
+- feature that checks final value and returns winnings
