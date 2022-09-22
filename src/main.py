@@ -72,38 +72,51 @@ def spin_animation():
 
 
 def check_win(a, b, c):
-    if a == "$" and b == "$" and c == "$":
-        Game.winnings = 1000*Game.current_bet
-        print("\n\n *DING DING DING* JACKPOT!!!")
-        press_to_continue()
-    elif a == "8" and b == "8" and c == "8":
-        Game.winnings = 888*Game.current_bet
-        print("\n\n That is the Lucky888!")
-        press_to_continue()
-    elif a == "A" and b == "A" and c == "A":
-        Game.winnings = 50*Game.current_bet
-        print("\n\n You are an Ace")
-        press_to_continue()
-    elif a == "K" and b == "K" and c == "K":
-        Game.winnings = 20*Game.current_bet
-        press_to_continue()
-        print("\n\n Eat and drink like a King!")
-    elif a == "Q" and b == "Q" and c == "Q":
-        Game.winnings = 10*Game.current_bet
-        print("\n\n *YAAAS QUEEN!")
-        press_to_continue()
-    elif a == "J" and b == "J" and c == "J":
-        Game.winnings = 5*Game.current_bet
-        print("\n\n Jack of all trades!")
-        press_to_continue()
-    else:
-        Game.winnings = 0
-
-    if Game.winnings > 0:
+    if a == Items.jackpot and b == Items.jackpot and c == Items.jackpot:
+        Game.winnings = Items.jackpot_value*Game.current_bet
         Game.credits += Game.winnings
-        print(" Congratulations! You just won $" + str(Game.winnings) + "!!!")
+        print(f"\n\n Congratulations! You just won {Fore.LIGHTGREEN_EX}${Game.winnings}{Fore.WHITE}!")
+        print(f" This was {Fore.LIGHTCYAN_EX}{Items.jackpot_value}x{Fore.WHITE} your bet amount of {Fore.LIGHTGREEN_EX}${Game.current_bet}{Fore.WHITE}\n")
+        print(f"{Fore.LIGHTCYAN_EX} *DING DING DING* JACKPOT!!!")
+        press_to_continue()
+    elif a == Items.lucky888 and b == Items.lucky888 and c == Items.lucky888:
+        Game.winnings = Items.lucky888_value*Game.current_bet
+        Game.credits += Game.winnings
+        print(f"\n\n Congratulations! You just won {Fore.LIGHTGREEN_EX}${Game.winnings}{Fore.WHITE}!")
+        print(f" This was {Fore.LIGHTRED_EX}{Items.lucky888_value}x{Fore.WHITE} your bet amount of {Fore.LIGHTGREEN_EX}${Game.current_bet}{Fore.WHITE}\n")
+        print(f"{Fore.LIGHTRED_EX} That is the Lucky888 bonus!")
+        press_to_continue()
+    elif a == Items.ace and b == Items.ace and c == Items.ace:
+        Game.winnings = Items.ace_value*Game.current_bet
+        Game.credits += Game.winnings
+        print(f"\n\n Congratulations! You just won {Fore.LIGHTGREEN_EX}${Game.winnings}{Fore.WHITE}!")
+        print(f" This was {Fore.LIGHTGREEN_EX}{Items.ace_value}x{Fore.WHITE} your bet amount of {Fore.LIGHTGREEN_EX}${Game.current_bet}{Fore.WHITE}\n")
+        print(f"{Fore.LIGHTGREEN_EX} You are an Ace")
+        press_to_continue()
+    elif a == Items.king and b == Items.king and c == Items.king:
+        Game.winnings = Items.king_value*Game.current_bet
+        Game.credits += Game.winnings
+        print(f"\n\n Congratulations! You just won {Fore.LIGHTGREEN_EX}${Game.winnings}{Fore.WHITE}!")
+        print(f" This was {Fore.LIGHTYELLOW_EX}{Items.king_value}x{Fore.WHITE} your bet amount of {Fore.LIGHTGREEN_EX}${Game.current_bet}{Fore.WHITE}\n")
+        print(f"{Fore.LIGHTYELLOW_EX} Eat and drink like a King!")
+        press_to_continue()
+    elif a == Items.queen and b ==Items.queen and c == Items.queen:
+        Game.winnings = Items.queen_value*Game.current_bet
+        Game.credits += Game.winnings
+        print(f"\n\n Congratulations! You just won {Fore.LIGHTGREEN_EX}${Game.winnings}{Fore.WHITE}!")
+        print(f" This was {Fore.LIGHTMAGENTA_EX}{Items.queen_value}x{Fore.WHITE} your bet amount of {Fore.LIGHTGREEN_EX}${Game.current_bet}{Fore.WHITE}\n")
+        print(f"{Fore.LIGHTMAGENTA_EX} *YAAAS QUEEN!")
+        press_to_continue()
+    elif a == Items.jack and b == Items.jack and c == Items.jack:
+        Game.winnings = Items.jack_value*Game.current_bet
+        Game.credits += Game.winnings
+        print(f"\n\n Congratulations! You just won {Fore.LIGHTGREEN_EX}${Game.winnings}{Fore.WHITE}!")
+        print(f" This was {Fore.LIGHTBLUE_EX}{Items.jack_value}x{Fore.WHITE} your bet amount of {Fore.LIGHTGREEN_EX}${Game.current_bet}{Fore.WHITE}\n")
+        print(f"{Fore.LIGHTBLUE_EX} Jack of all trades!")
+        press_to_continue()
     else:
-        print("\n\n Sorry, no win this time.")
+        print("\n\n Sorry, no win this time buddy.")
+        Game.winnings = 0
         press_to_continue()
 
 def play():
