@@ -1,9 +1,8 @@
 import random
 import time
-from classes import *
-from screens import *
-from art import *
 from colorama import Fore
+from classes import Game, Items
+from screens import press_to_continue
 
 def reel_randomiser():
     symbols = [Items.jack, Items.jack, Items.jack, Items.jack, Items.jack,

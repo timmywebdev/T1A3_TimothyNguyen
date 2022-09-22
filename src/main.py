@@ -1,8 +1,8 @@
 import os
 from colorama import Fore
-from game import *
-from classes import *
-from screens import *
+from game import check_win, spin_animation
+from classes import Game
+from screens import landing, press_to_continue, press_to_lever, layout, ending_loss, ending_win
 
 def play():
     RUNNING = True    

@@ -1,7 +1,7 @@
 import os
-from classes import *
-from art import text2art
 from colorama import Fore
+from art import text2art
+from classes import Game
 
 def landing():
     title1 = text2art("Lucky      Lion", font="tarty1")
@@ -35,16 +35,6 @@ def layout():
     print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      75x     |     Queens |\t{Fore.WHITE}  Match 3 to win!")
     print(f"{Fore.LIGHTBLUE_EX} | JJJ |      50x     |      Jacks |\t{Fore.WHITE} Gamble Responsibly")
     print(" -----------------------------------\t--------------------\n")
-
-def landing():
-    title1 = text2art("Lucky      Lion", font="tarty1")
-    title2 = text2art("                  Slots", font = "tarty1")
-    os.system("clear")
-    print(f"{Fore.LIGHTGREEN_EX}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-    print(f"{Fore.LIGHTRED_EX}{title1}")
-    print(f"{Fore.LIGHTMAGENTA_EX}{title2}")
-    print(f"{Fore.LIGHTGREEN_EX}\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-    press_to_continue()
 
 def ending_loss():
     ending1 = text2art("Better luck", font = "tarty2")

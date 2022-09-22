@@ -1,4 +1,4 @@
-classes: 1
+classes:
 - Game
     - this contains important variables that are used throughout the machine 
         - credits
