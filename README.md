@@ -54,11 +54,10 @@ if Game.credits <= 0 and RUNNING is True:
 
 ```
 
-| Input               | Error? | Implementation to fix                                                                |
-|---------------------|--------|--------------------------------------------------------------|
-| any input that does | yes    | I used deposit.isdigit() to make sure the input contains     |
-| not have digits     |        | digits. This makes sure that turning the input into an       |
-|                     |        | integer will work. If the input does not only contain digits |
+| Input                               | Error? | Implementation to fix |
+|-------------------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| any input that does not have digits | yes    | I used deposit.isdigit() to make sure the input contains digits. This makes sure that turning the input into an integer will work. If the input does not only contain digits
+
 
 
 
