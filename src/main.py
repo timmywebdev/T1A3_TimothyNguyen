@@ -133,6 +133,14 @@ def check_win(a, b, c):
         Game.winnings = 0
         press_to_continue()
 
+def landing():
+    os.system("clear")
+    print(f"{Fore.LIGHTGREEN_EX}$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print(f"{Fore.LIGHTRED_EX}{title1}")
+    print(f"{Fore.LIGHTMAGENTA_EX}{title2}")
+    print(f"{Fore.LIGHTGREEN_EX}\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    press_to_continue()
+
 def play():
     colorama.init(autoreset=True)
     RUNNING = True    
