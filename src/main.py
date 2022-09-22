@@ -106,3 +106,19 @@ def play():
 
         # reduce console flicker by limiting to 60fps
         time.sleep(1/60)
+
+        # RUNNING LOOP
+    while RUNNING:
+        Game.game_over = False
+        Game.current_bet = 0
+        Game.credits = 0
+        Game.winnings = 0
+
+        while True:
+            os.system("clear")
+            landing()
+
+            if Game.credits <= 0 and RUNNING is True:
+                print("\tWelcome to the Lucky Lion Slot Machine!\n Match 3 of the same symbols to win a multiplier of your bet!")
+                press_to_continue()
+                landing()
