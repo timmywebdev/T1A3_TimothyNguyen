@@ -103,3 +103,6 @@ def play():
         print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      10x     |     Queens |")
         print(f"{Fore.LIGHTBLUE_EX} | JJJ |       5x     |      Jacks |")
         print(" -----------------------------------")
+
+        # reduce console flicker by limiting to 60fps
+        time.sleep(1/60)
