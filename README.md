@@ -37,35 +37,28 @@ The Deposit Money feature occurs when the game has just begun and there is no cr
 As credits is an integer value, there are a few errors that can occur when taking the value from the input variable. These errors will occur when the input consists of letters, symbols or even if it is blank. Here is the code for this feature.
 
 ``` Py
-if Game.credits <= 0 and RUNNING is True:
-    os.system("clear")
-    layout()
-    deposit = input(" There are currently no credits in the machine. \n How much would you like to deposit?\n > ")
-    if deposit.isdigit():
-        deposit = int(deposit)
-        if deposit >= 1:
-            Game.credits += deposit
-        else: 
-            print(" Please enter a number larger than 0!")
-            press_to_continue()
-    else:
-        print (" Please enter a real number!")
+deposit = input(" There are currently no credits in the machine. \n How much would you like to deposit?\n > ")
+if deposit.isdigit():
+    deposit = int(deposit)
+    if deposit >= 1:
+        Game.credits += deposit
+    else: 
+        print(" Please enter a number larger than 0!")
         press_to_continue()
-
+else:
+    print (" Please enter a real number!")
+    press_to_continue()
 ```
 
 | Input                               | Error? | Implementation to fix |
 |-------------------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| any input that does not have digits | yes    | I used deposit.isdigit() to make sure the input contains digits. This makes sure that turning the input into an integer will work. If the input does not only contain digits
+| not just digits | yes | I used deposit.isdigit() to make sure the input contains digits. This makes sure that turning the input into an integer will work. If the input does not only contain digits, it will print "Please enter a real number", and start the loop again. |
+| an integer | no |  |
+| less than or equal to 0 | yes | if the input consists of digits, and it is able to be converted to an int, then if the int(input) is less than or equal to 0, it will print " Please enter a number larger than 0!" and start the loop again. |
+| ---|
 
+A few conditional control statements were used here to handle errors. These conditions included, if the input was only consisting of digits, and also if the converted int(input) was less than or equal to 0. This was very useful to handle all types of error inputs.
 
-
-
-
-
-- use of variables and the concept of variable scope
-- loops and conditional control structures
-- error handling
 
 ### **Feature 2 - Enter Bet Amount**
 
