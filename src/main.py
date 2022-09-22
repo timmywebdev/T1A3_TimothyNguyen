@@ -49,3 +49,7 @@ def spin_anim():
             spinning(first, second, third)
 
     return (first, second, third)
+
+def reel():
+    symbols = [ Fore.LIGHTBLUE_EX + 'JJJJJ', Fore.LIGHTMAGENTA_EX + 'QQQQQ', Fore.LIGHTYELLOW_EX + 'KKKKK', Fore.LIGHTGREEN_EX + 'AAA', Fore.LIGHTRED_EX + '88', Fore.LIGHTMAGENTA_EX + '$']
+    return random.choice(symbols)
