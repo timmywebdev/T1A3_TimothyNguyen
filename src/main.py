@@ -29,11 +29,9 @@ def play():
                     else: 
                         print(" Please enter a number larger than 0!")
                         press_to_continue()
-                        # break
                 else:
                     print (" Please enter a real number!")
                     press_to_continue()
-                    # break
             # Put bet amount in and run the game
             while Game.credits >=1 and RUNNING is True:
                 if Game.credits >=1:

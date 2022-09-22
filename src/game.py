@@ -6,11 +6,11 @@ from screens import press_to_continue
 
 def reel_randomiser():
     symbols = [Items.jack, Items.jack, Items.jack, Items.jack, Items.jack,
-    Items.queen, Items.queen, Items.queen, Items.queen, Items.queen,
-    Items.king, Items.king, Items.king, Items.king, Items.king,
-    Items.ace, Items.ace, Items.ace, Items.ace, Items.ace,
-    Items.lucky888, Items.lucky888, Items.lucky888,
-    Items.jackpot]
+                Items.queen, Items.queen, Items.queen, Items.queen, Items.queen,
+                Items.king, Items.king, Items.king, Items.king, Items.king,
+                Items.ace, Items.ace, Items.ace, Items.ace, Items.ace,
+                Items.lucky888, Items.lucky888, Items.lucky888,
+                Items.jackpot]
 
     return random.choice(symbols)
 
