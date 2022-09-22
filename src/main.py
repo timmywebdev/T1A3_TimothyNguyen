@@ -70,6 +70,20 @@ def spin_animation():
             spinning(first, second, third)
     return (first, second, third)
 
+def landing():
+    print(f"\t\t {Fore.LIGHTGREEN_EX}$$$ {Fore.LIGHTRED_EX}Lucky {Fore.LIGHTMAGENTA_EX}Lion {Fore.LIGHTRED_EX}Slot {Fore.LIGHTMAGENTA_EX}Machine {Fore.LIGHTGREEN_EX}$$$ \n")
+    print(" -----------------------------------\t-------------------")
+    print(f" |     |   Winnings   |    Name    |\t  Winnings: {Fore.LIGHTGREEN_EX}{Game.winnings}")
+    print(f"{Fore.CYAN} | $$$ |    1000x     |    Jackpot |\t  {Fore.WHITE}Bet Amount: {Fore.LIGHTGREEN_EX}{Game.current_bet}")
+    print(f"{Fore.LIGHTRED_EX} | 888 |     888x     |   Lucky888 |")
+    print(f"{Fore.LIGHTGREEN_EX} | AAA |      50x     |       Aces |\t  {Fore.WHITE}Credits: {Fore.LIGHTGREEN_EX}{Game.credits}")
+    print(f"{Fore.LIGHTYELLOW_EX} | KKK |      20x     |      Kings |\t{Fore.WHITE}-------------------")
+    print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      10x     |     Queens |")
+    print(f"{Fore.LIGHTBLUE_EX} | JJJ |       5x     |      Jacks |")
+    print(" -----------------------------------")
+
+    # reduce console flicker by limiting to 60fps
+    time.sleep(1/60)
 
 def check_win(a, b, c):
     if a == Items.jackpot and b == Items.jackpot and c == Items.jackpot:
@@ -120,85 +134,68 @@ def check_win(a, b, c):
         press_to_continue()
 
 def play():
+    colorama.init(autoreset=True)
     RUNNING = True    
 
-    def landing():
-        print(f"\t\t {Fore.LIGHTGREEN_EX}$$$ {Fore.LIGHTRED_EX}Lucky {Fore.LIGHTMAGENTA_EX}Lion {Fore.LIGHTRED_EX}Slot {Fore.LIGHTMAGENTA_EX}Machine {Fore.LIGHTGREEN_EX}$$$ \n")
-        print(" -----------------------------------\t-------------------")
-        print(f" |     |   Winnings   |    Name    |\t  Winnings: {Fore.LIGHTGREEN_EX}{Game.winnings}")
-        print(f"{Fore.CYAN} | $$$ |    1000x     |    Jackpot |\t  {Fore.WHITE}Bet Amount: {Fore.LIGHTGREEN_EX}{Game.current_bet}")
-        print(f"{Fore.LIGHTRED_EX} | 888 |     888x     |   Lucky888 |")
-        print(f"{Fore.LIGHTGREEN_EX} | AAA |      50x     |       Aces |\t  {Fore.WHITE}Credits: {Fore.LIGHTGREEN_EX}{Game.credits}")
-        print(f"{Fore.LIGHTYELLOW_EX} | KKK |      20x     |      Kings |\t{Fore.WHITE}-------------------")
-        print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      10x     |     Queens |")
-        print(f"{Fore.LIGHTBLUE_EX} | JJJ |       5x     |      Jacks |")
-        print(" -----------------------------------")
-
-        # reduce console flicker by limiting to 60fps
-        time.sleep(1/60)
-
-        # RUNNING LOOP
+    # RUNNING LOOP
     while RUNNING:
         Game.game_over = False
         Game.current_bet = 0
         Game.credits = 0
         Game.winnings = 0
-
+        landing()
         while True:
             os.system("clear")
-            landing()
+            layout()
 
             if Game.credits <= 0 and RUNNING is True:
-                print("\tWelcome to the Lucky Lion Slot Machine!\n Match 3 of the same symbols to win a multiplier of your bet!")
-                press_to_continue()
-                landing()
-                deposit = input(" There are currently no more credits in the machine. \n How much would you like to deposit?\n > ")
+                os.system("clear")
+                layout()
+                deposit = input(" There are currently no credits in the machine. \n How much would you like to deposit?\n > ")
                 if deposit.isdigit():
                     deposit = int(deposit)
                     if deposit >= 1:
                         Game.credits += deposit
-                        continue
                     else: 
                         print(" Please enter a number larger than 0!")
-                        break
+                        press_to_continue()
+                        # break
                 else:
                     print (" Please enter a real number!")
-                    break
-
+                    press_to_continue()
+                    # break
             # Put bet amount in and run the game
             while Game.credits >=1 and RUNNING is True:
-
                 if Game.credits >=1:
                     os.system('clear')
-                    landing()
+                    layout()
                     bet = input(" Enter bet amount or enter 'q' to withdraw. \n > ")
                     if bet.isdigit():
                         bet = int(bet)
-                        if bet <= Game.credits and bet >= 0:
+                        if bet <= Game.credits and bet > 0:
                             Game.current_bet = bet
                             Game.credits -= Game.current_bet
-                            press_to_continue()
-                            landing()
+                            press_to_lever()
+                            layout()
                         else:
-                            print(f" You must place a bet between 0 and {Game.credits+1}!")
+                            print(f" You can only place a bet between {Fore.LIGHTGREEN_EX}$0{Fore.WHITE} and {Fore.LIGHTGREEN_EX}${Game.credits+1}{Fore.WHITE}!")
                             press_to_continue()
                             break
                     elif bet.lower() == "q":
-                        print(f" You have left the game with ${Game.credits}! Congratulations!")
+                        print(f" You have left the game with {Fore.LIGHTGREEN_EX}${Game.credits}{Fore.WHITE}! Congratulations!")
                         exit()
                     else: 
                         print(" That is not a valid number...")
                         press_to_continue()
                         break
-
-                outcome = spin_anim()
-                a, b, c = outcome
-                # Check_win doesn't work either when it wins
+                   
+                outcome = spin_animation()
+                a, b, c = outcome #DEBUG change outcome to (Items.variable, Items.variable, Items.variable) where variable is the outcome you want to test, to test win messages.
                 check_win(a, b, c)
                 
-                # This code below doesnt work (i think it fks up because of line 37)
                 if Game.credits == 0:
-                    print("Sorry mate, you ran out of money!")
+                    layout()
+                    print("\n Sorry mate, you ran out of money!\n Come back with more next time...\n")
                     exit()
 
 play()
