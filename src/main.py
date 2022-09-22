@@ -26,3 +26,26 @@ def press_to_continue():
     os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
     os.system('clear')
     print()
+
+def spin_anim():
+    for i in range(30):
+        if i < 12:
+            first = reel_randomiser()
+            second = reel_randomiser()
+            third = reel_randomiser()
+
+            spinning(first, second, third)
+        elif i < 25:
+            first = first
+            second = reel_randomiser()
+            third = reel_randomiser()
+
+            spinning(first, second, third)
+        else:
+            first = first
+            second = second
+            third = reel_randomiser()
+
+            spinning(first, second, third)
+
+    return (first, second, third)
