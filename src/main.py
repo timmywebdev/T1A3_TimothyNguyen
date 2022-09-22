@@ -121,6 +121,17 @@ def play():
                 print("\tWelcome to the Lucky Lion Slot Machine!\n Match 3 of the same symbols to win a multiplier of your bet!")
                 press_to_continue()
                 landing()
-
+                deposit = input(" There are currently no more credits in the machine. \n How much would you like to deposit?\n > ")
+                if deposit.isdigit():
+                    deposit = int(deposit)
+                    if deposit >= 1:
+                        Game.credits += deposit
+                        continue
+                    else: 
+                        print(" Please enter a number larger than 0!")
+                        break
+                else:
+                    print (" Please enter a real number!")
+                    break
 
 play()
