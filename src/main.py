@@ -1,5 +1,6 @@
 from colorama import Fore
 import os
+import random
 
 class Game:
     current_bet = 0
@@ -37,3 +38,6 @@ def layout():
     print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      75x     |     Queens |\t{Fore.WHITE}  Match 3 to win!")
     print(f"{Fore.LIGHTBLUE_EX} | JJJ |      50x     |      Jacks |\t{Fore.WHITE} Gamble Responsibly")
     print(" -----------------------------------\t--------------------\n")
+
+def reel_randomiser():
+    return random.choice('JJJJJQQQQQKKKKKAAAAA88$')
