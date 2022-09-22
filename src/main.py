@@ -23,13 +23,13 @@ class Items:
     lucky888_value = 8888
     jackpot_value = 10000
 
-def reel():
-    symbols = [ Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  Fore.LIGHTCYAN_EX + 'J' + Fore.WHITE ,  
-    Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE, 
-    Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE, Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE, Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE, Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE, Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE, 
-    Fore.LIGHTGREEN_EX + 'A' + Fore.WHITE, Fore.LIGHTGREEN_EX + 'A' + Fore.WHITE, Fore.LIGHTGREEN_EX + 'A' + Fore.WHITE, 
-    Fore.LIGHTRED_EX + '8' + Fore.WHITE, Fore.LIGHTRED_EX + '8' + Fore.WHITE, 
-    Fore.LIGHTCYAN_EX + '$' + Fore.WHITE]
+def reel_randomiser():
+    symbols = [Items.jack, Items.jack, Items.jack, Items.jack, Items.jack,
+    Items.queen, Items.queen, Items.queen, Items.queen, Items.queen,
+    Items.king, Items.king, Items.king, Items.king, Items.king,
+    Items.ace, Items.ace, Items.ace, Items.ace, Items.ace,
+    Items.lucky888, Items.lucky888, Items.lucky888,
+    Items.jackpot]
 
     return random.choice(symbols)
 
@@ -38,8 +38,10 @@ def press_to_continue():
     os.system('clear')
     print()
 
-def print_row(first, second, third):
-    print('[ {} | {} | {} ]'.format(first, second, third,t=time.sleep(.15)), end='\r')
+def spinning(a, b, c):
+    print('\t\t------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
+    # reduce flicker by maxing console refresh to 60fps
+    time.sleep(1/60)
 
 def round():
     for i in range(30):
