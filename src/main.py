@@ -53,3 +53,38 @@ def spin_anim():
 def reel():
     symbols = [ Fore.LIGHTBLUE_EX + 'JJJJJ', Fore.LIGHTMAGENTA_EX + 'QQQQQ', Fore.LIGHTYELLOW_EX + 'KKKKK', Fore.LIGHTGREEN_EX + 'AAA', Fore.LIGHTRED_EX + '88', Fore.LIGHTMAGENTA_EX + '$']
     return random.choice(symbols)
+
+def check_win(a, b, c):
+    if a == "$" and b == "$" and c == "$":
+        Game.winnings = 1000*Game.current_bet
+        print("\n\n *DING DING DING* JACKPOT!!!")
+        press_to_continue()
+    elif a == "8" and b == "8" and c == "8":
+        Game.winnings = 888*Game.current_bet
+        print("\n\n That is the Lucky888!")
+        press_to_continue()
+    elif a == "A" and b == "A" and c == "A":
+        Game.winnings = 50*Game.current_bet
+        print("\n\n You are an Ace")
+        press_to_continue()
+    elif a == "K" and b == "K" and c == "K":
+        Game.winnings = 20*Game.current_bet
+        press_to_continue()
+        print("\n\n Eat and drink like a King!")
+    elif a == "Q" and b == "Q" and c == "Q":
+        Game.winnings = 10*Game.current_bet
+        print("\n\n *YAAAS QUEEN!")
+        press_to_continue()
+    elif a == "J" and b == "J" and c == "J":
+        Game.winnings = 5*Game.current_bet
+        print("\n\n Jack of all trades!")
+        press_to_continue()
+    else:
+        Game.winnings = 0
+
+    if Game.winnings > 0:
+        Game.credits += Game.winnings
+        print(" Congratulations! You just won $" + str(Game.winnings) + "!!!")
+    else:
+        print("\n\n Sorry, no win this time.")
+        press_to_continue()
