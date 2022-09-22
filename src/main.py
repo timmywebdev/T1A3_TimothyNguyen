@@ -1,7 +1,8 @@
 import random
 import time
 import os
-from colorama import *
+from art import *
+from colorama import Fore
 
 class Game:
     current_bet = 0
@@ -70,17 +71,18 @@ def spin_animation():
             spinning(first, second, third)
     return (first, second, third)
 
-def landing():
-    print(f"\t\t {Fore.LIGHTGREEN_EX}$$$ {Fore.LIGHTRED_EX}Lucky {Fore.LIGHTMAGENTA_EX}Lion {Fore.LIGHTRED_EX}Slot {Fore.LIGHTMAGENTA_EX}Machine {Fore.LIGHTGREEN_EX}$$$ \n")
-    print(" -----------------------------------\t-------------------")
-    print(f" |     |   Winnings   |    Name    |\t  Winnings: {Fore.LIGHTGREEN_EX}{Game.winnings}")
-    print(f"{Fore.CYAN} | $$$ |    1000x     |    Jackpot |\t  {Fore.WHITE}Bet Amount: {Fore.LIGHTGREEN_EX}{Game.current_bet}")
-    print(f"{Fore.LIGHTRED_EX} | 888 |     888x     |   Lucky888 |")
-    print(f"{Fore.LIGHTGREEN_EX} | AAA |      50x     |       Aces |\t  {Fore.WHITE}Credits: {Fore.LIGHTGREEN_EX}{Game.credits}")
-    print(f"{Fore.LIGHTYELLOW_EX} | KKK |      20x     |      Kings |\t{Fore.WHITE}-------------------")
-    print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      10x     |     Queens |")
-    print(f"{Fore.LIGHTBLUE_EX} | JJJ |       5x     |      Jacks |")
-    print(" -----------------------------------")
+def layout():
+    layout_title = text2art("    Lucky Lion Slots", font="tarty2")
+    print(f"{Fore.LIGHTRED_EX}{layout_title}")
+    print(" -----------------------------------\t--------------------")
+    print(f" |     |   Winnings   |    Name    |\t  Winnings: {Fore.LIGHTGREEN_EX}${Game.winnings}")
+    print(f"{Fore.CYAN} | $$$ |   10000x     |    Jackpot |\t  {Fore.WHITE}Bet Amount: {Fore.LIGHTGREEN_EX}${Game.current_bet}")
+    print(f"{Fore.LIGHTRED_EX} | 888 |    8888x     |   Lucky888 |")
+    print(f"{Fore.LIGHTGREEN_EX} | AAA |     200x     |       Aces |\t  {Fore.WHITE}Credits: {Fore.LIGHTGREEN_EX}${Game.credits}")
+    print(f"{Fore.LIGHTYELLOW_EX} | KKK |     100x     |      Kings |\t{Fore.WHITE}--------------------")
+    print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      75x     |     Queens |\t{Fore.WHITE}  Match 3 to win!")
+    print(f"{Fore.LIGHTBLUE_EX} | JJJ |      50x     |      Jacks |\t{Fore.WHITE} Gamble Responsibly")
+    print(" -----------------------------------\t--------------------\n")
 
     # reduce console flicker by limiting to 60fps
     time.sleep(1/60)
