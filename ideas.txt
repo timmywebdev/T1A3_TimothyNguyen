@@ -68,8 +68,8 @@ py files grouping
 
 
 features:
-- start and end screens
 - deposit money
 - pick bet amount
+- feature to randomise the output
 - feature that shows slot spinning
 - feature that checks final value and returns winnings
