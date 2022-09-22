@@ -160,4 +160,14 @@ def play():
                         press_to_continue()
                         break
 
+                outcome = spin_anim()
+                a, b, c = outcome
+                # Check_win doesn't work either when it wins
+                check_win(a, b, c)
+                
+                # This code below doesnt work (i think it fks up because of line 37)
+                if Game.credits == 0:
+                    print("Sorry mate, you ran out of money!")
+                    exit()
+
 play()
