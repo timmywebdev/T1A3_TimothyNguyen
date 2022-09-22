@@ -44,7 +44,9 @@ def reel_randomiser():
     return random.choice(symbols)
 
 def spinning(a, b, c):
-    print('\t\t   ------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
+    print('\t\t------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
+    # reduce flicker by maxing console refresh to 60fps
+    time.sleep(1/60)
 
 def spin_anim():
     for i in range(30):
