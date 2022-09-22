@@ -2,6 +2,7 @@ import os
 import colorama
 from colorama import Fore
 from functions import *
+from art import *
 
 def play():
     colorama.init(autoreset=True)
@@ -52,7 +53,7 @@ def play():
                             press_to_continue()
                             break
                     elif bet.lower() == "q":
-                        print(f" You have left the game with {Fore.LIGHTGREEN_EX}${Game.credits}{Fore.WHITE}! Congratulations!")
+                        ending_win()
                         exit()
                     else: 
                         print(" That is not a valid number...")
@@ -64,8 +65,7 @@ def play():
                 check_win(a, b, c)
                 
                 if Game.credits == 0:
-                    layout()
-                    print("\n Sorry mate, you ran out of money!\n Come back with more next time...\n")
+                    ending_loss()
                     exit()
 
 play()
