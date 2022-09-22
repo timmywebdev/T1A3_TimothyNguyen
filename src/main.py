@@ -48,7 +48,7 @@ def spinning(a, b, c):
     # reduce flicker by maxing console refresh to 60fps
     time.sleep(1/60)
 
-def spin_anim():
+def spin_animation():
     for i in range(30):
         if i < 12:
             first = reel_randomiser()
@@ -68,12 +68,8 @@ def spin_anim():
             third = reel_randomiser()
 
             spinning(first, second, third)
-
     return (first, second, third)
 
-def reel():
-    symbols = [ Fore.LIGHTBLUE_EX + 'JJJJJ', Fore.LIGHTMAGENTA_EX + 'QQQQQ', Fore.LIGHTYELLOW_EX + 'KKKKK', Fore.LIGHTGREEN_EX + 'AAA', Fore.LIGHTRED_EX + '88', Fore.LIGHTMAGENTA_EX + '$']
-    return random.choice(symbols)
 
 def check_win(a, b, c):
     if a == "$" and b == "$" and c == "$":
