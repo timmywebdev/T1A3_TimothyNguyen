@@ -1,7 +1,6 @@
 import random
 import time
 import os
-import colorama
 from colorama import Fore
 
 class Game:
@@ -88,3 +87,19 @@ def check_win(a, b, c):
     else:
         print("\n\n Sorry, no win this time.")
         press_to_continue()
+
+def play():
+    colorama.init(autoreset=True)
+    RUNNING = True    
+
+    def landing():
+        print(f"\t\t {Fore.LIGHTGREEN_EX}$$$ {Fore.LIGHTRED_EX}Lucky {Fore.LIGHTMAGENTA_EX}Lion {Fore.LIGHTRED_EX}Slot {Fore.LIGHTMAGENTA_EX}Machine {Fore.LIGHTGREEN_EX}$$$ \n")
+        print(" -----------------------------------\t-------------------")
+        print(f" |     |   Winnings   |    Name    |\t  Winnings: {Fore.LIGHTGREEN_EX}{Game.winnings}")
+        print(f"{Fore.CYAN} | $$$ |    1000x     |    Jackpot |\t  {Fore.WHITE}Bet Amount: {Fore.LIGHTGREEN_EX}{Game.current_bet}")
+        print(f"{Fore.LIGHTRED_EX} | 888 |     888x     |   Lucky888 |")
+        print(f"{Fore.LIGHTGREEN_EX} | AAA |      50x     |       Aces |\t  {Fore.WHITE}Credits: {Fore.LIGHTGREEN_EX}{Game.credits}")
+        print(f"{Fore.LIGHTYELLOW_EX} | KKK |      20x     |      Kings |\t{Fore.WHITE}-------------------")
+        print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      10x     |     Queens |")
+        print(f"{Fore.LIGHTBLUE_EX} | JJJ |       5x     |      Jacks |")
+        print(" -----------------------------------")
