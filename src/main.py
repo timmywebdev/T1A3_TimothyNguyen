@@ -4,93 +4,92 @@ import time
 import colorama
 from classes import Game
 
-class Machine:
-    def __init__(self):
-        self.credits_inserted = 0
+def __init__(self):
+    self.credits_inserted = 0
 
-    def __repr__(self):
-        return f"Machine: credits_inserted={self.credits_inserted}, items={list(self._items.keys())}"
+def __repr__(self):
+    return f"Machine: credits_inserted={self.credits_inserted}, items={list(self._items.keys())}"
 
-    def spin_slot(first, second, third):
-        print('\t\t| {} | {} | {} |'.format(first, second, third,t=time.sleep(.15)), end='\r')
+def spin_slot(first, second, third):
+    print('\t\t| {} | {} | {} |'.format(first, second, third,t=time.sleep(.15)), end='\r')
 
-    def reel_randomiser():
-        reel_list = ['JJJJJQQQQQKKKKKAAA8$']
-        random_item = random.choice(reel_list)
-        return
+def reel_randomiser():
+    reel_list = ['JJJJJQQQQQKKKKKAAA8$']
+    random_item = random.choice(reel_list)
+    return
 
-    def reel_spin():
-        for i in range(30):
-            if i < 10:
-                first = reel_randomiser()
-                second = reel_randomiser()
-                third = reel_randomiser()
+def reel_spin():
+    for i in range(30):
+        if i < 10:
+            first = reel_randomiser()
+            second = reel_randomiser()
+            third = reel_randomiser()
 
-                spin_slot(first, second, third)
-            elif i < 20:
-                first = first
-                second = reel_randomiser()
-                third = reel_randomiser()
+            spin_slot(first, second, third)
+        elif i < 20:
+            first = first
+            second = reel_randomiser()
+            third = reel_randomiser()
 
-                spin_slot(first, second, third)
-            else:
-                first = first
-                second = second
-                third = reel_randomiser()
-
-                spin_slot(first, second, third)
-
-        return (first, second, third)
-
-
-    def check_win(a, b, c):
-        if a == "$" and b == "$" and c == "$":
-            Game.winnings = 1000*Game.current_bet
-            print(" *DING DING DING* JACKPOT!!!")
-        elif a == "8" and b == "8" and c == "8":
-            Game.winnings = 888*Game.current_bet
-            print(" That is the Lucky888!")
-        elif a == "A" and b == "A" and c == "A":
-            Game.winnings = 50*Game.current_bet
-            print(" You are an Ace")
-        elif a == "K" and b == "K" and c == "K":
-            Game.winnings = 20*Game.current_bet
-            print(" Eat and drink like a King!")
-        elif a == "Q" and b == "Q" and c == "Q":
-            Game.winnings = 10*Game.current_bet
-            print("*YAAAS QUEEN!")
-        elif a == "J" and b == "J" and c == "J":
-            Game.winnings = 5*Game.current_bet
-            print(" Jack of all trades!")
+            spin_slot(first, second, third)
         else:
-            Game.winnings = 0
+            first = first
+            second = second
+            third = reel_randomiser()
 
-        if Game.winnings > 0:
-            credits += Game.winnings
-            print("Congratulations! You just won $" + str(Game.winnings) + "!!!")
-        else:
-            print("Sorry, no win this time.")
-            
+            spin_slot(first, second, third)
+
+    return (first, second, third)
 
 
-    def play():
-        os.system("clear")
-        spinning()
+def check_win(a, b, c):
+    if a == "$" and b == "$" and c == "$":
+        Game.winnings = 1000*Game.current_bet
+        print(" *DING DING DING* JACKPOT!!!")
+    elif a == "8" and b == "8" and c == "8":
+        Game.winnings = 888*Game.current_bet
+        print(" That is the Lucky888!")
+    elif a == "A" and b == "A" and c == "A":
+        Game.winnings = 50*Game.current_bet
+        print(" You are an Ace")
+    elif a == "K" and b == "K" and c == "K":
+        Game.winnings = 20*Game.current_bet
+        print(" Eat and drink like a King!")
+    elif a == "Q" and b == "Q" and c == "Q":
+        Game.winnings = 10*Game.current_bet
+        print("*YAAAS QUEEN!")
+    elif a == "J" and b == "J" and c == "J":
+        Game.winnings = 5*Game.current_bet
+        print(" Jack of all trades!")
+    else:
+        Game.winnings = 0
+
+    if Game.winnings > 0:
+        credits += Game.winnings
+        print("Congratulations! You just won $" + str(Game.winnings) + "!!!")
+    else:
+        print("Sorry, no win this time.")
         
 
-    def spinning():
-        while(Game.credits >= 1):
-            Game.credits -= Game.current_bet;
-            reel_spin1 = reel_spin()
-            a, b, c = reel_spin1
-            layout()
-            print('\t\t| {} | {} | {} |'.format(a,b,c))
-            check_win(a, b, c)
-            
-            if Game.credits == 0:
-                print("Sorry mate, you ran out of money!")
-                break;
+
+def play():
+    os.system("clear")
+    spinning()
     
+
+def spinning():
+    while(Game.credits >= 1):
+        Game.credits -= Game.current_bet;
+        reel_spin1 = reel_spin()
+        a, b, c = reel_spin1
+        layout()
+        print('\t\t| {} | {} | {} |'.format(a,b,c))
+        check_win(a, b, c)
+        
+        if Game.credits == 0:
+            print("Sorry mate, you ran out of money!")
+            break;
+
 
 def play_game():
     use_termios = False
