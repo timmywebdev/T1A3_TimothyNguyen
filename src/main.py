@@ -134,4 +134,19 @@ def play():
                     print (" Please enter a real number!")
                     break
 
+            # Put bet amount in and run the game
+            while Game.credits >=1 and RUNNING is True:
+
+                if Game.credits >=1:
+                    os.system('clear')
+                    landing()
+                    bet = input(" Enter bet amount or enter 'q' to withdraw. \n > ")
+                    if bet.isdigit():
+                        bet = int(bet)
+                        if bet <= Game.credits and bet >= 0:
+                            Game.current_bet = bet
+                            Game.credits -= Game.current_bet
+                            press_to_continue()
+                            landing()
+
 play()
