@@ -148,5 +148,16 @@ def play():
                             Game.credits -= Game.current_bet
                             press_to_continue()
                             landing()
+                        else:
+                            print(f" You must place a bet between 0 and {Game.credits+1}!")
+                            press_to_continue()
+                            break
+                    elif bet.lower() == "q":
+                        print(f" You have left the game with ${Game.credits}! Congratulations!")
+                        exit()
+                    else: 
+                        print(" That is not a valid number...")
+                        press_to_continue()
+                        break
 
 play()
