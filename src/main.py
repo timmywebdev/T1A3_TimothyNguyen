@@ -1,11 +1,11 @@
 import os
-import colorama
 from colorama import Fore
-from functions import *
-from art import *
+# from functions import *
+from game import *
+from classes import *
+from screens import *
 
 def play():
-    colorama.init(autoreset=True)
     RUNNING = True    
 
     # RUNNING LOOP
