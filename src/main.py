@@ -25,3 +25,15 @@ def press_to_continue():
     os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")
     os.system('clear')
     print()
+
+def layout():
+    # print(f"{Fore.LIGHTRED_EX}{layout_title}")
+    print(" -----------------------------------\t--------------------")
+    print(f" |     |   Winnings   |    Name    |\t  Winnings: {Fore.LIGHTGREEN_EX}${Game.winnings}")
+    print(f"{Fore.CYAN} | $$$ |   10000x     |    Jackpot |\t  {Fore.WHITE}Bet Amount: {Fore.LIGHTGREEN_EX}${Game.current_bet}")
+    print(f"{Fore.LIGHTRED_EX} | 888 |    8888x     |   Lucky888 |")
+    print(f"{Fore.LIGHTGREEN_EX} | AAA |     200x     |       Aces |\t  {Fore.WHITE}Credits: {Fore.LIGHTGREEN_EX}${Game.credits}")
+    print(f"{Fore.LIGHTYELLOW_EX} | KKK |     100x     |      Kings |\t{Fore.WHITE}--------------------")
+    print(f"{Fore.LIGHTMAGENTA_EX} | QQQ |      75x     |     Queens |\t{Fore.WHITE}  Match 3 to win!")
+    print(f"{Fore.LIGHTBLUE_EX} | JJJ |      50x     |      Jacks |\t{Fore.WHITE} Gamble Responsibly")
+    print(" -----------------------------------\t--------------------\n")
