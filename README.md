@@ -282,7 +282,7 @@ Source folder:
 
 To install and run this application:
 
-On native Terminal:
+****On native Terminal:****
 
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line:
@@ -290,10 +290,12 @@ On native Terminal:
     `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
 3. Now head to the source folder
 4. To run the application, enter the following code into your command line:
+   
     `./src/app.sh`
 5. Follow the on screen instructions to play and enjoy!
 
-On Virtual Environment (Preferred if you do not want to install dependables locally):
+
+****On Virtual Environment (Preferred if you do not want to install dependables locally):****
 
 1. Install python3 if not already installed (<https://www.python.org/downloads>)
 2. Open your command line and navigate to a directory you wish to run the program from.
@@ -301,6 +303,7 @@ On Virtual Environment (Preferred if you do not want to install dependables loca
   
     `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
 4. Activate virtual environment in your chosen path:
+   
     `python3 -m venv /path/to/virtual/environment`
 
     then
