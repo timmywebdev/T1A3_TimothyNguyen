@@ -277,6 +277,8 @@ Source folder:
 - game.py
 - main.py
 - screens.py
+- pip_exec.py
+- app.sh
 
 ## **Help Documentation (R8)**
 
