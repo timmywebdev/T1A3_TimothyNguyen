@@ -15,7 +15,7 @@
   - [**Implementation Plan (R7)**](#implementation-plan-r7)
   - [**Test Cases (R15)**](#test-cases-r15)
   - [**Deployment**](#deployment)
-  - [**Help Documentation (R8)**](#help-documentation-r8)
+  - [**Help Documentation (R8) (R17)**](#help-documentation-r8-r17)
   - [**References/Attributions (R3)**](#referencesattributions-r3)
 
 ## **Links (R4)**
@@ -264,7 +264,7 @@ Source folder:
 
 /docs
 
-- files found in README.md
+- images/files found in README.md
 
 /ppt
 
@@ -273,18 +273,23 @@ Source folder:
 /src
 
 - .gitignore
+- app.sh
 - classes.py
 - game.py
 - main.py
-- screens.py
 - pip_exec.py
-- app.sh
+- screens.py
 
-## **Help Documentation (R8)**
+
+README.md
+
+requirements.txt
+
+## **Help Documentation (R8) (R17)**
 
 To install and run this application:
 
-****On native Terminal:****
+***On native Terminal:***
 
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line:
@@ -297,7 +302,7 @@ To install and run this application:
 5. Follow the on screen instructions to play and enjoy!
 
 
-****On Virtual Environment (Preferred if you do not want to install dependables locally):****
+***On Virtual Environment (Preferred if you do not want to install dependables locally):***
 
 1. Install python3 if not already installed (<https://www.python.org/downloads>)
 2. Open your command line and navigate to a directory you wish to run the program from.
