@@ -1,22 +1,20 @@
 # **T1A3 - Terminal Application Timothy Nguyen**
 
 ## **Table of contents**
-
-[**T1A3 - Terminal Application: Timothy Nguyen**](#t1a3---terminal-application-timothy-nguyen)
-[**Table of contents**](#table-of-contents)
 - [**T1A3 - Terminal Application Timothy Nguyen**](#t1a3---terminal-application-timothy-nguyen)
   - [**Table of contents**](#table-of-contents)
   - [**Links (R4)**](#links-r4)
   - [**Styling Conventions (R5)**](#styling-conventions-r5)
   - [**Overview**](#overview)
   - [**Flow Diagram**](#flow-diagram)
-  - [**R6 - Features**](#r6---features)
+  - [**Features (R6)**](#features-r6)
     - [**Feature 1 - Deposit Money**](#feature-1---deposit-money)
     - [**Feature 2 - Enter Bet Amount**](#feature-2---enter-bet-amount)
     - [**Feature 3 - Slot Randomisation and Spinning Animation**](#feature-3---slot-randomisation-and-spinning-animation)
     - [**Feature 4 - Check Win then Pay Winnings**](#feature-4---check-win-then-pay-winnings)
   - [**Implementation Plan (R7)**](#implementation-plan-r7)
-  - [**R8 - Help Documentation**](#r8---help-documentation)
+  - [**Test Cases (R15)**](#test-cases-r15)
+  - [**Help Documentation (R8)**](#help-documentation-r8)
   - [**References/Attributions (R3)**](#referencesattributions-r3)
 
 ## **Links (R4)**
@@ -54,7 +52,7 @@ However, if you have run out of credits from gambling too much, you will see thi
 
 ![Flow Diagram](docs/FlowchartT1A3.png)
 
-## **R6 - Features**
+## **Features (R6)**
 
 ### **Feature 1 - Deposit Money**
 
@@ -231,7 +229,8 @@ def check_win(a, b, c):
 
 Initially, the ideas were written up in a file in my directory. 
 This is the [Ideas.pdf](docs/ideas.pdf) file.
-Trello was then used to create a checklist of tasks with deadlines. Each task on the to-do list was also given a label which shows the priority of the task. Tasks to create each feature was made with checklists and deadlines to help with the implementation plan and deadline of the application.
+Trello was then used to create a checklist of tasks with deadlines. Each task on the to-do list was also given a label which shows the priority of the task. Tasks to create each feature was made with checklists and deadlines to help with the implementation plan and deadline of the application. Below are some examples of my Trello Workspace in progress.
+
 ![Trello Main Page](docs/TrelloMainPage.png)
 
 ![Trello Priority Labels](docs/TrelloPriorityLabels.png)
@@ -244,12 +243,25 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 
 ![Feature 4](docs/Feature4Trello.png)
 
-## **R8 - Help Documentation**
+## **Test Cases (R15)**
+
+| Test Case ID | Test Case Description | Test Steps | Test Data | Expected Results | Actual Results | Pass/Fail | Error Handling |
+|------|------|------|------|------|------|------|------|
+| TC01 | Check Deposit with Integer | 1. Get to deposit page 2. Enter integer | deposit = int() | Program should take the integer and continue running the code | As expected | Pass| nil |
+| TC02 | Check Deposit with 'word' input | 1. Get to deposit page 2. Enter 'hello' | Error message | Program should print error message and return back to loop | As expected | Pass | nil |
+| TC03 | Check Bet with Integer | 1. Get to bet page 2. Enter integer | bet = int() | Program should take the integer and continue running the code | As expected | Pass| nil |
+| TC04 | Check Bet with 'word' input | 1. Get to bet page 2. Enter 'hello' | Error message | Program should print error message and return back to loop | As expected | Pass | nil |
+| TC05 | Check Bet with 'q' input | 1. Get to bet page 2. Enter 'q' | bet = q | Should withdraw credits and display end screen | As expected | Pass | nil |
+| TC06 | Press keys on keyboard while reel is spinning | 1. Start reel spin. 2. Press keys while spinning | key presses whilst function is running | Nothing should happen | The letters show up on the terminal until it is done but doesn't affect the function. Letters get cleared as soon as the function finishes and does not affect output.  | Half pass | Implemented `flush_input()` to make sure the inputed keypresses are flushed before `press_to_continue()` is called. |
+| TC07 | Press enter on keyboard while reel is spinning | 1. Start reel spin. 2. Press 'enter' while function is running | Enter key input is recorded | Nothing | The reel function gets printed multiple times while it is running | FAIL | Not sure how to fix this |
+
+
+## **Help Documentation (R8)**
 
 To install and run this application:
 
 1. Open your command line and navigate to a directory you wish to run the program from.
-2. Enter the following code into your command line 
+2. Enter the following code into your command line:
     `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
 3. Once the repository has finished cloning, there are several modules you must install to run the application. Enter the following into your command line:
     `$pip install colorama`
