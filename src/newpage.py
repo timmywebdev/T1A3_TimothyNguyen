@@ -18,3 +18,4 @@ def press_to_lever():
     os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to pull the lever...\"'")
     os.system('clear')
     print()
+    
