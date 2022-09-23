@@ -204,11 +204,11 @@ def check_win(a, b, c):
 Initially, the ideas were written up in a file in my directory. 
 This is the ![Ideas](\docs/ideas.pdf).
 Trello was then used to create a checklist of tasks with deadlines. Each task on the to-do list was also given a label which shows the priority of the task. Tasks to create each feature was made with checklists and deadlines to help with the implementation plan and deadline of the application.
-![Trello Main Page](\docs/TrelloMainPage.png)
+![Trello Main Page](docs/TrelloMainPage.png)
 
 ![Trello Priority Labels](\docs/TrelloPriorityLabels.png)
 
-![Feature 1](\docs/TrelloFeature1.png)
+![Feature 1](docs/Feature1Trello.png)
 
 ![Feature 2](\docs/TrelloFeature2.png)
 
