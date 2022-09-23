@@ -258,15 +258,18 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 
 ## **Deployment**
 
-Deployment to [Github](https://github.com/timmywebdev/TimothyNguyen_T1A3)
-Source folder:
+Deployment to [Github](https://github.com/timmywebdev/TimothyNguyen_T1A3)  
+Source folder:  
 /docs
+
 - files found in README.md
 
 /ppt
+
 - Powerpoint Presentation PDF
 
 /src
+
 - .gitignore
 - classes.py
 - game.py
