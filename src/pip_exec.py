@@ -1,6 +1,7 @@
 import subprocess
 import sys
 
+# helps users install dependencies
 def pip_exec():
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'colorama'])
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'art'])
