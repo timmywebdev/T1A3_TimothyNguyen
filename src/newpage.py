@@ -15,7 +15,6 @@ def press_to_continue():
     print()
 
 def press_to_lever():
-    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to pull the lever...\"'")
+    os.system("/bin/bash -c 'read -s -n 1 -p \"\n Please *DO NOT* press 'Enter' while reel is spinning! \n\n Press any key to pull the lever...\"'")
     os.system('clear')
     print()
-    
