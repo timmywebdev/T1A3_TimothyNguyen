@@ -286,13 +286,13 @@ On native Terminal:
 
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line:
-    `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
+    `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
 3. Once the repository has finished cloning, there are several modules you must install to run the application. Enter the following into your command line:
-    `$pip install colorama`
+    `pip install colorama`
   and
-    `$pip install art`
+    `pip install art`
 4. To run the application, enter the following code into your command line:
-    `$python3 \src/main.py`
+    `./src/app.sh`
 5. Follow the on screen instructions to play and enjoy!
 
 On Virtual Environment (Preferred if you do not want to install dependables locally):
@@ -300,21 +300,23 @@ On Virtual Environment (Preferred if you do not want to install dependables loca
 1. Install python3 if not already installed (<https://www.python.org/downloads>)
 2. Open your command line and navigate to a directory you wish to run the program from.
 3. Enter the following code into your command line:
-    `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
+   
+    `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
 4. Activate virtual environment in your chosen path:
-    `python3 -m venv /path/to/virtual/environment'
+    `python3 -m venv /path/to/virtual/environment`
 
     then
   
-    `python3 source /path/bin/activate'
+    `python3 source /path/bin/activate`
 5. Install dependables to virtual environment:
     `pip install colorama`
   and
     `pip install art`
 6. Run application with following code:
-    `python3 \src/main.py`
+    `./src/app.sh`
 7. Follow the on screen instructions to play and enjoy!
 
+For R17, a bash script (app.sh) has been created so it is alot easier to run the application. 
 There are no system or hardware requirements for this application to run natively.
 
 However, if run on the virtual environment it will be on python3. Here are the minimum requirements for Python3 installation:

