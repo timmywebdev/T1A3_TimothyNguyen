@@ -286,17 +286,19 @@ On native Terminal:
 
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line:
+   
     `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
-3. To run the application, enter the following code into your command line:
+3. Now head to the source folder
+4. To run the application, enter the following code into your command line:
     `./src/app.sh`
-4. Follow the on screen instructions to play and enjoy!
+5. Follow the on screen instructions to play and enjoy!
 
 On Virtual Environment (Preferred if you do not want to install dependables locally):
 
 1. Install python3 if not already installed (<https://www.python.org/downloads>)
 2. Open your command line and navigate to a directory you wish to run the program from.
 3. Enter the following code into your command line:
-   
+  
     `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
 4. Activate virtual environment in your chosen path:
     `python3 -m venv /path/to/virtual/environment`
@@ -308,7 +310,8 @@ On Virtual Environment (Preferred if you do not want to install dependables loca
     `./src/app.sh`
 6. Follow the on screen instructions to play and enjoy!
 
-For R17, a bash script (app.sh) has been created so it is alot easier to run the application. 
+For R17, a bash script (app.sh) has been created so it is alot easier to run the application. This script helps users to install dependencies automatically and then run the application. 
+
 There are no system or hardware requirements for this application to run natively.
 
 However, if run on the virtual environment it will be on python3. Here are the minimum requirements for Python3 installation:
