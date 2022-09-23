@@ -4,9 +4,9 @@ pip_exec()
 
 import os
 from colorama import Fore
-from game import check_win, spin_animation
-from classes import Game
-from screens import landing, press_to_continue, press_to_lever, layout, ending_loss, ending_win, flush_input
+from game import check_win, spin_animation, Game
+from screens import landing, layout, ending_loss, ending_win
+from newpage import press_to_continue, flush_input, press_to_lever
 
 def play():
     RUNNING = True    

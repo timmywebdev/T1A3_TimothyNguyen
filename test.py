@@ -1,28 +1,46 @@
-import random
-import time
-from colorama import Fore
-from newpage import press_to_continue
+#deposit
+deposit = input(" There are currently no credits in the machine. \n How much would you like to deposit?\n > ")
+if deposit.isdigit():
+    deposit = int(deposit)
+    if deposit >= 1:
+        Game.credits += deposit
+    else: 
+        print(" Please enter a number larger than 0!")
+        press_to_continue()
+else:
+    print (" Please enter a real number!")
+    press_to_continue()
 
-class Game:
-    current_bet = 0
-    winnings = 0
-    credits = 0
 
-class Items:
-    jack = Fore.LIGHTBLUE_EX + 'J' + Fore.WHITE
-    queen = Fore.LIGHTMAGENTA_EX + 'Q' + Fore.WHITE
-    king = Fore.LIGHTYELLOW_EX + 'K' + Fore.WHITE
-    ace =  Fore.LIGHTGREEN_EX + 'A' + Fore.WHITE
-    lucky888 =  Fore.LIGHTRED_EX + '8' + Fore.WHITE
-    jackpot = Fore.LIGHTCYAN_EX + '$' + Fore.WHITE
+#feature 2: bet
+while Game.credits >=1 and RUNNING is True:
+    if Game.credits >=1:
+        flush_input()
+        os.system('clear')
+        layout()
+        bet = input(" Enter bet amount or enter 'q' to withdraw. \n > ")
+        if bet.isdigit():
+            bet = int(bet)
+            if bet <= Game.credits and bet > 0:
+                Game.current_bet = bet
+                Game.credits -= Game.current_bet
+                press_to_lever()
+                layout()
+            else:
+                print(f" You can only place a bet between {Fore.LIGHTGREEN_EX}$0{Fore.WHITE} and {Fore.LIGHTGREEN_EX}${Game.credits+1}{Fore.WHITE}!")
+                press_to_continue()
+                break
+        elif bet.lower() == "q":
+            ending_win()
+            exit()
+        else: 
+            print(" That is not a valid number...")
+            flush_input()
+            press_to_continue()
+            break
 
-    jack_value = 50
-    queen_value = 75
-    king_value = 100
-    ace_value = 200
-    lucky888_value = 8888
-    jackpot_value = 10000 
-
+#feature 3: slot machine spinning
+    #part 1:
 def reel_randomiser():
     symbols = [Items.jack, Items.jack, Items.jack, Items.jack, Items.jack,
                 Items.queen, Items.queen, Items.queen, Items.queen, Items.queen,
@@ -33,11 +51,7 @@ def reel_randomiser():
 
     return random.choice(symbols)
 
-def spinning(a, b, c):
-    print('\t\t------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
-    # reduce flicker by maxing console refresh to 60fps
-    time.sleep(1/60)
-
+    #part 2a (spinning animation + print):
 def spin_animation():
     for i in range(30):
         if i < 12:
@@ -60,7 +74,13 @@ def spin_animation():
             spinning(first, second, third)
     return (first, second, third)
 
+    #part2b (printing the animation with formatting so it clears before next print)
+def spinning(a, b, c):
+    print('\t\t------> | {} | {} | {} | <------'.format(a, b, c,t=time.sleep(.15)), end='\r')
+    # reduce flicker by maxing console refresh to 60fps
+    time.sleep(1/60)
 
+#feature 4: checking for the win
 def check_win(a, b, c):
     if a == Items.jackpot and b == Items.jackpot and c == Items.jackpot:
         Game.winnings = Items.jackpot_value*Game.current_bet
