@@ -287,13 +287,9 @@ On native Terminal:
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line:
     `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
-3. Once the repository has finished cloning, there are several modules you must install to run the application. Enter the following into your command line:
-    `pip install colorama`
-  and
-    `pip install art`
-4. To run the application, enter the following code into your command line:
+3. To run the application, enter the following code into your command line:
     `./src/app.sh`
-5. Follow the on screen instructions to play and enjoy!
+4. Follow the on screen instructions to play and enjoy!
 
 On Virtual Environment (Preferred if you do not want to install dependables locally):
 
@@ -308,13 +304,9 @@ On Virtual Environment (Preferred if you do not want to install dependables loca
     then
   
     `python3 source /path/bin/activate`
-5. Install dependables to virtual environment:
-    `pip install colorama`
-  and
-    `pip install art`
-6. Run application with following code:
+5. Run application with following code:
     `./src/app.sh`
-7. Follow the on screen instructions to play and enjoy!
+6. Follow the on screen instructions to play and enjoy!
 
 For R17, a bash script (app.sh) has been created so it is alot easier to run the application. 
 There are no system or hardware requirements for this application to run natively.
