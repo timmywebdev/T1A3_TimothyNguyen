@@ -14,6 +14,7 @@
     - [**Feature 4 - Check Win then Pay Winnings**](#feature-4---check-win-then-pay-winnings)
   - [**Implementation Plan (R7)**](#implementation-plan-r7)
   - [**Test Cases (R15)**](#test-cases-r15)
+  - [**Deployment**](#deployment)
   - [**Help Documentation (R8)**](#help-documentation-r8)
   - [**References/Attributions (R3)**](#referencesattributions-r3)
 
@@ -255,6 +256,22 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 | TC06 | Press keys on keyboard while reel is spinning | 1. Start reel spin. 2. Press keys while spinning | key presses whilst function is running | Nothing should happen | The letters show up on the terminal until it is done but doesn't affect the function. Letters get cleared as soon as the function finishes and does not affect output.  | Half pass | Implemented `flush_input()` to make sure the inputed keypresses are flushed before `press_to_continue()` is called. |
 | TC07 | Press enter on keyboard while reel is spinning | 1. Start reel spin. 2. Press 'enter' while function is running | Enter key input is recorded | Nothing | The reel function gets printed multiple times while it is running | FAIL | Not sure how to fix this |
 
+## **Deployment**
+
+Deployment to [Github](https://github.com/timmywebdev/TimothyNguyen_T1A3)
+Source folder:
+/docs
+- files found in README.md
+
+/ppt
+- Powerpoint Presentation PDF
+
+/src
+- .gitignore
+- classes.py
+- game.py
+- main.py
+- screens.py
 
 ## **Help Documentation (R8)**
 
