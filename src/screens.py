@@ -11,7 +11,17 @@ def landing():
     print(f"{Fore.LIGHTRED_EX}{title1}")
     print(f"{Fore.LIGHTMAGENTA_EX}{title2}")
     print(f"{Fore.LIGHTGREEN_EX}\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    flush_input()
     press_to_continue()
+
+def flush_input():
+    try:
+        import msvcrt
+        while msvcrt.kbhit():
+            msvcrt.getch()
+    except ImportError:
+        import sys, termios    #for linux/unix
+        termios.tcflush(sys.stdin, termios.TCIOFLUSH)
 
 def press_to_continue():
     os.system("/bin/bash -c 'read -s -n 1 -p \"\n Press any key to continue...\"'")

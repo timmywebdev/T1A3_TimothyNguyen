@@ -2,7 +2,7 @@ import random
 import time
 from colorama import Fore
 from classes import Game, Items
-from screens import press_to_continue
+from screens import press_to_continue, flush_input
 
 def reel_randomiser():
     symbols = [Items.jack, Items.jack, Items.jack, Items.jack, Items.jack,

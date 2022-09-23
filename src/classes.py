@@ -18,4 +18,5 @@ class Items:
     king_value = 100
     ace_value = 200
     lucky888_value = 8888
-    jackpot_value = 10000
+    jackpot_value = 10000 
+    

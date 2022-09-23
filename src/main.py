@@ -2,7 +2,7 @@ import os
 from colorama import Fore
 from game import check_win, spin_animation
 from classes import Game
-from screens import landing, press_to_continue, press_to_lever, layout, ending_loss, ending_win
+from screens import landing, press_to_continue, press_to_lever, layout, ending_loss, ending_win, flush_input
 
 def play():
     RUNNING = True    
@@ -35,6 +35,7 @@ def play():
             # Put bet amount in and run the game
             while Game.credits >=1 and RUNNING is True:
                 if Game.credits >=1:
+                    flush_input()
                     os.system('clear')
                     layout()
                     bet = input(" Enter bet amount or enter 'q' to withdraw. \n > ")
@@ -54,14 +55,17 @@ def play():
                         exit()
                     else: 
                         print(" That is not a valid number...")
+                        flush_input()
                         press_to_continue()
                         break
                    
                 outcome = spin_animation()
                 a, b, c = outcome #DEBUG change outcome to (Items.variable, Items.variable, Items.variable) where variable is the outcome you want to test, to test win messages.
+                flush_input()
                 check_win(a, b, c)
                 
                 if Game.credits == 0:
+                    flush_input()
                     ending_loss()
                     exit()
 

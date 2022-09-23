@@ -6,33 +6,46 @@
 [**Table of contents**](#table-of-contents)
 - [**T1A3 - Terminal Application Timothy Nguyen**](#t1a3---terminal-application-timothy-nguyen)
   - [**Table of contents**](#table-of-contents)
-  - [**R4 - Links**](#r4---links)
-  - [**R5 - Styling Conventions**](#r5---styling-conventions)
+  - [**Links (R4)**](#links-r4)
+  - [**Styling Conventions (R5)**](#styling-conventions-r5)
+  - [**Overview**](#overview)
+  - [**Flow Diagram**](#flow-diagram)
   - [**R6 - Features**](#r6---features)
     - [**Feature 1 - Deposit Money**](#feature-1---deposit-money)
     - [**Feature 2 - Enter Bet Amount**](#feature-2---enter-bet-amount)
     - [**Feature 3 - Slot Randomisation and Spinning Animation**](#feature-3---slot-randomisation-and-spinning-animation)
     - [**Feature 4 - Check Win then Pay Winnings**](#feature-4---check-win-then-pay-winnings)
-  - [**R7 - Implementation Plan**](#r7---implementation-plan)
+  - [**Implementation Plan (R7)**](#implementation-plan-r7)
   - [**R8 - Help Documentation**](#r8---help-documentation)
+  - [**References/Attributions (R3)**](#referencesattributions-r3)
 
-## **R4 - Links**
+## **Links (R4)**
 
 - [Github Repo](https://github.com/timmywebdev/TimothyNguyen_T1A3)
 - [Slide Deck Presentation link - Youtube]()
 - [Slide Deck PDF]()
 
-## **R5 - Styling Conventions**
+## **Styling Conventions (R5)**
 
 - PEP 8 – Style Guide for Python Code (<https://peps.python.org/pep-0008/>)
+
+## **Overview**
+
+This is a slot machine that runs inside the terminal. 
+When the game first runs, a welcome landing screen is displayed.
+
+
+## **Flow Diagram**
+
+[Flow Diagram](docs/FlowchartT1A3.png)
 
 ## **R6 - Features**
 
 ### **Feature 1 - Deposit Money**
 
-The Deposit Money feature occurs when the game has just begun and there is no credits in the machine. The user will be able to input a money amount which will be stored under the deposit variable. Once the input passes through each of the conditions, then the deposit will be added to the credits. The variable that the credits fall under is in the 'Game' class. The Game class handles multiple variables that are used throughout the code.
+The Deposit Money feature occurs when the game has just begun and there is no credits in the machine. The user will be able to input a money amount which will be stored under the `deposit` variable. Once the input passes through each of the conditions, then the `deposit` will be added to the `credits`. The variable that the credits fall under is in the `Game` class. The `Game` class handles multiple variables that are used throughout the code.
 
-As credits is an integer value, there are a few errors that can occur when taking the value from the input variable. These errors will occur when the input consists of letters, symbols or even if it is blank. Here is the code for this feature.
+As `credits` is an integer value, there are a few errors that can occur when taking the value from the input variable. These errors will occur when the input consists of letters, symbols or even if it is blank. Here is the code for this feature.
 
 ``` Py
 deposit = input(" There are currently no credits in the machine. \n How much would you like to deposit?\n > ")
@@ -58,7 +71,7 @@ A few conditional control statements were used here to handle errors. These cond
 
 ### **Feature 2 - Enter Bet Amount**
 
-The Enter Bet Amount feature is similar to the Deposit Money feature. After the deposit has been made, and the variable credits in class Game has a value, a prompt will be made for the user to input the amount they would like to wager. When the user enters an input to the prompt, the input is stored in the variable 'bet' and will be put under certain conditions that will determine what the output will be. The first condition will use the .isdigit() method to determine whether the input only contains digits. If this method passes, 'bet' will then be converted to an integer so the code can continue. Once it is converted to an integer, the next condition will check whether the bet is more than 0 and is less than credits (since you cannot bet more than the credits that you have). If this condition is true, the bet will be subtracted from the credits and the next feature to start the game will begin. However, if the value of the variable is above credits or less than or equal to 0, an error statement will be outputted, and the loop will break and start again. If the first condition of .isdigit() does not pass, then the next condition to check is the string that was given. If the string is a 'q' or 'Q', this will allow the user to terminate the game and withdraw their money. If the input is any other string except for "q" or "Q", then an error statement will be outputted, and the loop will break and start again.
+The Enter Bet Amount feature is similar to the Deposit Money feature. After the deposit has been made, and the variable `credits` in class `Game` has a value, a prompt will be made for the user to input the amount they would like to wager. When the user enters an input to the prompt, the input is stored in the variable `bet` and will be put under certain conditions that will determine what the output will be. The first condition will use the `.isdigit()` method to determine whether the input only contains digits. If this method passes, `bet` will then be converted to an integer so the code can continue. Once it is converted to an integer, the next condition will check whether the bet is more than 0 and is less than `credits` (since you cannot bet more than the credits that you have). If this condition is true, the bet will be subtracted from `credits` and the next feature to start the game will begin. However, if the value of the variable is above `credits` or less than or equal to 0, an error statement will be outputted, and the loop will break and start again. If the first condition of `.isdigit()` does not pass, then the next condition to check is the string that was given. If the string is a 'q' or 'Q', this will allow the user to terminate the game and withdraw their money. If the input is any other string except for "q" or "Q", then an error statement will be outputted, and the loop will break and start again.
 
 Here is the code:
 
@@ -94,7 +107,7 @@ else:
 
 ### **Feature 3 - Slot Randomisation and Spinning Animation**
 
-After the game has received a bet amount from the previous feature, it is now time to run the game. The first part of this feature is to gather the slot items into a list and then use the 'Random' module to randomly choose from the list. The 'Random' module is imported and random.choice() is used on the list. The function will then return a random choice from the list of slot items given.
+After the game has received a `bet_amount` from the previous feature, it is now time to run the game. The first part of this feature is to gather the slot items into a list and then use the `Random` module to randomly choose from the list. The `Random` module is imported and `random.choice()` is used on the list. The function will then return a random choice from the list of slot items given.
 This code displays getting the list and then randomising it:
 ```py
 def reel_randomiser():
@@ -108,7 +121,7 @@ def reel_randomiser():
     return random.choice(symbols)
 ```
 
-The second part of this feature is to output a slot machine that looks like it is spinning. This used two functions to operate. The first function is for the animation and the second function is to print the reels. The first function spin_animation() uses a for loop to run the reel_randomiser() function up to 30 steps. For the first 12 steps, all 3 reels are spinning. After i is more than 12, the first reel will stop running the reel_randomiser() function and the variable(First) will hold the final value of it. After i is more than 25, the second reel stops running the reel_randomiser() function and the variable(Second) will hold the final value of it. Finally once i = 30, the third reel stops the reel_randomiser() function and the variable(Third) will hold the final value. Once all 3 have completed, the function will return (first, second, third) values to the next function.
+The second part of this feature is to output a slot machine that looks like it is spinning. This used two functions to operate. The first function is for the animation and the second function is to print the reels. The first function `spin_animation()` uses a `for` loop to run the `reel_randomiser()` function up to 30 steps. For the first 12 steps, all 3 reels are spinning. After `i` is more than 12, the first reel will stop running the `reel_randomiser()` function and the `variable(first)` will hold the final value of it. After `i` is more than 25, the second reel stops running the `reel_randomiser()` function and the `variable(second)` will hold the final value of it. Finally once `i = 30`, the third reel stops the `reel_randomiser()` function and the `variable(third)` will hold the final value. Once all 3 have completed, the function will return `(first, second, third)` values to the next function.
 The code below shows the 'for' loop that was used:
 
 ```py
@@ -134,7 +147,7 @@ def spin_animation():
             spinning(first, second, third)
     return (first, second, third)
 ```
-Now that we have the (first, second, third) variables, we can print the slot machine. This is the final function of this feature and it is continually printed throughout the spin_animation() function to make the reel look like it is spinning. I used .format and time.sleep() method as well as end=\r to clear the screen after every print. This worked perfectly to animate the spinning of the reel. This function required the use of the time module as well to limit the refresh rate of the terminal and stop the screen flicker.
+Now that we have the `(first, second, third)` variables, we can print the slot machine. This is the final function of this feature and it is continually printed throughout the `spin_animation()` function to make the reel look like it is spinning. I used `.format` and `time.sleep()` method as well as `end=\r` to clear the screen after every print. This worked perfectly to animate the spinning of the reel. This function required the use of the time module as well to limit the refresh rate of the terminal and stop the screen flicker.
 
 ```py
 def spinning(a, b, c):
@@ -147,7 +160,7 @@ As this feature does not require a user input/interaction, the only errors that 
 
 ### **Feature 4 - Check Win then Pay Winnings**
 
-The final feature of this application occurs once the previous feature is completed. Once the list of the final output of the animation is created, this function will be called to check the output. The 'if' condition will check if the outputs(a, b, c) match each other. If a, b and c all match, the function will check which symbol it is. Depending on the symbol, a calculation is made to determine the 'winnings' variable. The 'bet_amount' is multiplied by the symbol's 'value' and then stored in the winnings variable. The 'winnings' variable is then added to the 'credits' variable. A winning message will then be displayed with the winnings amount and the user will then be prompted back to bet again if they please.
+The final feature of this application occurs once the previous feature is completed. Once the list of the final output of the animation is created, this function will be called to check the output. The `if` condition will check if the outputs `(a, b, c)` match each other. If `a, b, c` all match, the function will check which symbol it is. Depending on the symbol, a calculation is made to determine the `winnings` variable. The `bet_amount` is multiplied by the symbol's `value` and then stored in the `winnings` variable. The `winnings` variable is then added to the `credits` variable. A winning message will then be displayed with the winnings amount and the user will then be prompted back to bet again if they please.
 
 ```py
 def check_win(a, b, c):
@@ -199,10 +212,10 @@ def check_win(a, b, c):
         press_to_continue()
 ```
 
-## **R7 - Implementation Plan**
+## **Implementation Plan (R7)**
 
 Initially, the ideas were written up in a file in my directory. 
-This is the [Ideas](docs/ideas.pdf).
+This is the [Ideas.pdf](docs/ideas.pdf) file.
 Trello was then used to create a checklist of tasks with deadlines. Each task on the to-do list was also given a label which shows the priority of the task. Tasks to create each feature was made with checklists and deadlines to help with the implementation plan and deadline of the application.
 ![Trello Main Page](docs/TrelloMainPage.png)
 
@@ -218,8 +231,23 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 
 ## **R8 - Help Documentation**
 
-- Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
-- steps to install the application
-- any dependencies required by the application to operate
-- any system/hardware requirements
-- how to use any command line arguments made for the application
+To install and run this application:
+1. Open your command line and navigate to a directory you wish to run the program from.
+2. Enter the following code into your command line 
+    `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
+3. Once the repository has finished cloning, there are several modules you must install to run the application. Enter the following into your command line:
+    `$pip install colorama`
+  and
+    `$pip install art`
+4. To run the application, enter the following code into your command line:
+    `$python3 \src/main.py`
+5. Follow the on screen instructions and enjoy!
+
+There are no system or hardware requirements for this application.
+
+## **References/Attributions (R3)**
+
+- [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/)
+- [Pypi Art](https://pypi.org/project/art/)
+- [Pypi Colorama](https://pypi.org/project/colorama/)
+- [Ascii Art](https://emojicombos.com/pepe-text-art)
