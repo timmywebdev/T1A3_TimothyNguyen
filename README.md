@@ -254,7 +254,7 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 | TC04 | Check Bet with 'word' input | 1. Get to bet page 2. Enter 'hello' | bet = ‘hello’ | Program should print error message and return back to loop | As expected | Pass | nil |
 | TC05 | Check Bet with 'q' input | 1. Get to bet page 2. Enter 'q' | bet = lower.(q) | Should withdraw credits and display end screen | As expected | Pass | nil |
 | TC06 | Press keys on keyboard while reel is spinning | 1. Start reel spin. 2. Press keys while spinning | key presses whilst function is running | Nothing should happen | The letters show up on the terminal while reel is spinning. This affected the `press_to_continue()` function.  | FAIL | Implemented `flush_input()` to make sure the inputed keypresses are flushed before `press_to_continue()` is called. |
-| TC07 | Press enter on keyboard while reel is spinning | 1. Start reel spin. 2. Press 'enter' while function is running | Enter key input is recorded | Nothing | The reel function gets printed multiple times while it is running | FAIL | Added warning to not press |
+| TC07 | Press enter on keyboard while reel is spinning | 1. Start reel spin. 2. Press 'enter' while function is running | Enter key input is recorded | Nothing should happen | The reel function gets printed multiple times while it is running | FAIL | Added warning to not press |
 
 ## **Deployment**
 
