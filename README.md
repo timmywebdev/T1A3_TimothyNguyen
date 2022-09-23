@@ -31,9 +31,24 @@
 
 ## **Overview**
 
-This is a slot machine that runs inside the terminal. 
-When the game first runs, a welcome landing screen is displayed.
+This is a slot machine that runs inside the terminal.
+When the game first runs, a welcome landing screen is displayed. Once the landing screen has passed, the game layout with deposit prompt will be outputted.
+[Landing Screen](docs/LandingScreen.png)
+[Layout with Deposit](docs/LayoutDeposit.png)
 
+After a deposit has been taken, a new prompt will be displayed to take a bet amount.
+[Layout with Bet Amount](docs/LayoutBet.png)
+
+Once the bet amount has been entered, the slot machine will run (Picture below does not show reel animation). Once the slot reel finishes spinning, you will be shown a lose screen or a win screen depending on your outcome.
+[Winning Outcome](docs/WinningOutcome.png)
+[Losing Outcome](docs/LosingOutcome.png)
+
+If you have credits left, you will return to the screen with the bet amount. You may enter 'q' here to withdraw your credits and end the game or you can bet and continue playing.
+If you have entered 'q' you will see this screen.
+[Endscreen Withdraw](docs/EndWithdraw.png)
+
+However, if you have run out of credits from gambling too much, you will see this screen.
+[Endscreen Lose](docs/EndLose.png)
 
 ## **Flow Diagram**
 
@@ -232,6 +247,7 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 ## **R8 - Help Documentation**
 
 To install and run this application:
+
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line 
     `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
