@@ -319,11 +319,12 @@ There are no system or hardware requirements for this application to run nativel
 
 However, if run on the virtual environment it will be on python3. Here are the minimum requirements for Python3 installation:
 
-Processors: Intel® Core™ i3 or AMD Ryzen 3250u CPU Operating System: Windows 7/10/11, Linux 64-bit RHEL or Mac OS X 10.11 & up RAM: 4GB of on-board system memory Disk Space: ~5GB of Hard Drive space
+Processors: Intel® Core™ i3 or AMD Ryzen 3250u CPU Operating System: Windows 7/10/11, Linux 64-bit RHEL or Mac OS X 10.11 & up RAM: 4GB of on-board system memory Disk Space: ~5GB of Hard Drive space (Lee, 2021)
 
 ## **References/Attributions (R3)**
 
-- [PEP 8 - Style Guide for Python Code](https://peps.python.org/pep-0008/)
-- [Pypi Art](https://pypi.org/project/art/)
-- [Pypi Colorama](https://pypi.org/project/colorama/)
-- [Ascii Art](https://emojicombos.com/pepe-text-art)
+- PEP 8 - Style Guide for Python Code (<https://peps.python.org/pep-0008/>)
+- Pypi Art (<https://pypi.org/project/art/>)
+- Pypi Colorama (<https://pypi.org/project/colorama/>)
+- Ascii Art (<https://emojicombos.com/pepe-text-art>)
+- Python Installation Requirement (<https://app.iclasspro.com/portal/sanfrancisco/news/15>)
