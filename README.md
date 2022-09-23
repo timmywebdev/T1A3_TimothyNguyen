@@ -282,6 +282,8 @@ Source folder:
 
 To install and run this application:
 
+On native Terminal:
+
 1. Open your command line and navigate to a directory you wish to run the program from.
 2. Enter the following code into your command line:
     `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
@@ -291,9 +293,33 @@ To install and run this application:
     `$pip install art`
 4. To run the application, enter the following code into your command line:
     `$python3 \src/main.py`
-5. Follow the on screen instructions and enjoy!
+5. Follow the on screen instructions to play and enjoy!
 
-There are no system or hardware requirements for this application.
+On Virtual Environment (Preferred if you do not want to install dependables locally):
+
+1. Install python3 if not already installed (<https://www.python.org/downloads>)
+2. Open your command line and navigate to a directory you wish to run the program from.
+3. Enter the following code into your command line:
+    `$git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
+4. Activate virtual environment in your chosen path:
+    `python3 -m venv /path/to/virtual/environment'
+
+    then
+  
+    `python3 source /path/bin/activate'
+5. Install dependables to virtual environment:
+    `pip install colorama`
+  and
+    `pip install art`
+6. Run application with following code:
+    `python3 \src/main.py`
+7. Follow the on screen instructions to play and enjoy!
+
+There are no system or hardware requirements for this application to run natively.
+
+However, if run on the virtual environment it will be on python3. Here are the minimum requirements for Python3 installation:
+
+Processors: Intel® Core™ i3 or AMD Ryzen 3250u CPU Operating System: Windows 7/10/11, Linux 64-bit RHEL or Mac OS X 10.11 & up RAM: 4GB of on-board system memory Disk Space: ~5GB of Hard Drive space
 
 ## **References/Attributions (R3)**
 
