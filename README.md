@@ -325,3 +325,4 @@ Processors: Intel® Core™ i3 or AMD Ryzen 3250u CPU Operating System: Windows 
 - Pypi Colorama (<https://pypi.org/project/colorama/>)
 - Ascii Art (<https://emojicombos.com/pepe-text-art>)
 - Python Installation Requirement (<https://app.iclasspro.com/portal/sanfrancisco/news/15>)
+- Using pip from your program (<https://pip.pypa.io/en/stable/user_guide/#using-pip-from-your-program>)
