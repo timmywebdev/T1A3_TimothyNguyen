@@ -201,12 +201,20 @@ def check_win(a, b, c):
 
 ## **R7 - Implementation Plan**
 
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
-- Utilise a suitable project management platform to track this implementation plan.
-- Provide screenshots/images and/or a reference to an accessible project management platform used to track this implementation plan. 
-- Your checklists for each feature should have at least 5 items.
+Initially, the ideas were written up in a file in my directory. 
+This is the ![Ideas](\docs/ideas.pdf).
+Trello was then used to create a checklist of tasks with deadlines. Each task on the to-do list was also given a label which shows the priority of the task. Tasks to create each feature was made with checklists and deadlines to help with the implementation plan and deadline of the application.
+![Trello Main Page](\docs/TrelloMainPage.png)
+
+![Trello Priority Labels](\docs/TrelloPriorityLabels.png)
+
+![Feature 1](\docs/TrelloFeature1.png)
+
+![Feature 2](\docs/TrelloFeature2.png)
+
+![Feature 3](\docs/TrelloFeature3.png)
+
+![Feature 4](\docs/TrelloFeature4.png)
 
 ## **R8 - Help Documentation**
 
