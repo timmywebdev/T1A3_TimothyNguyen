@@ -22,7 +22,7 @@
 
 - [Github Repo](https://github.com/timmywebdev/TimothyNguyen_T1A3)
 - [Slide Deck Presentation link - Youtube]()
-- [Slide Deck PDF]()
+- [Slide Deck PDF](ppt/TimothyNguyen_T1A3.pdf)
 
 ## **Styling Conventions (R5)**
 
