@@ -90,24 +90,31 @@ The Enter Bet Amount feature is similar to the Deposit Money feature. After the 
 Here is the code:
 
 ```python
-if bet.isdigit():
-    bet = int(bet)
-    if bet <= Game.credits and bet > 0:
-        Game.current_bet = bet
-        Game.credits -= Game.current_bet
-        press_to_lever()
-        layout()
-    else:
-        print(f" You can only place a bet between $0 and ${Game.credits+1}!")
-        press_to_continue()
-        break
-elif bet.lower() == "q":
-    ending_win()
-    exit()
-else: 
-    print(" That is not a valid number...")
-    press_to_continue()
-    break
+  bet = input(" Enter bet amount or enter 'q' to withdraw. \n If you have made a previous bet, press 'Enter' to repeat your bet. \n > ")
+  if bet.isdigit():
+      bet = int(bet)
+      if bet <= Game.credits and bet > 0:
+          Game.current_bet = bet
+          Game.credits -= Game.current_bet
+          press_to_lever()
+          layout()
+      else:
+          print(f" You can only place a bet between {Fore.LIGHTGREEN_EX}$0{Fore.WHITE} and {Fore.LIGHTGREEN_EX}${Game.credits+1}{Fore.WHITE}!")
+          press_to_continue()
+          break
+  elif Game.current_bet > 0 and bet == "":
+      bet = Game.current_bet
+      Game.credits -= Game.current_bet
+      press_to_lever()
+      layout()  
+  elif bet.lower() == "q":
+      ending_win()
+      exit()
+  else: 
+      print(" That is not a valid number...")
+      flush_input()
+      press_to_continue()
+      break
 ```
 
 | Input| Error? | Implementation to fix |
@@ -228,7 +235,7 @@ def check_win(a, b, c):
 
 ## **Implementation Plan (R7)**
 
-Initially, the ideas were written up in a file in my directory. 
+Initially, the ideas were written up in a file in my directory.
 This is the [Ideas.pdf](docs/ideas.pdf) file.
 Trello was then used to create a checklist of tasks with deadlines. Each task on the to-do list was also given a label which shows the priority of the task. Tasks to create each feature was made with checklists and deadlines to help with the implementation plan and deadline of the application. Below are some examples of my Trello Workspace in progress.
 
