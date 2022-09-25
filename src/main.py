@@ -1,12 +1,14 @@
+from pip_exec import pip_exec
+pip_exec()
 import os
 from colorama import Fore
-from pip_exec import pip_exec
+# from pip_exec import pip_exec
 from game import check_win, spin_animation, Game
 from screens import landing, layout, ending_loss, ending_win
 from newpage import press_to_continue, flush_input, press_to_lever
 
 # This exec function is used to execute the program by helping the user install dependencies
-pip_exec()
+# pip_exec()
 
 def play():
     RUNNING = True    

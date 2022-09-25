@@ -21,7 +21,7 @@
 ## **Links (R4)**
 
 - [Github Repo](https://github.com/timmywebdev/TimothyNguyen_T1A3)
-- [Slide Deck Presentation link - Youtube](https://youtu.be/ZphLh5bYOZo)
+- [Slide Deck Presentation link - Youtube](https://youtu.be/ZphLh5bYOZo.)
 - [Slide Deck PDF](ppt/TimothyNguyen_T1A3.pdf)
 
 ## **Styling Conventions (R5)**
