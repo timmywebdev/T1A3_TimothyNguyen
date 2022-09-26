@@ -324,13 +324,13 @@ To install and run this application:
 4. Enter the following code into your command line:
   
     `git clone https://github.com/timmywebdev/TimothyNguyen_T1A3`
-5. Activate virtual environment in your chosen path:
+5. Activate virtual environment in your chosen path (example will just make the virtual environment in a .venv folder):
    
-    `python3 -m venv /path/to/virtual/environment`
+    `python3 -m venv .venv`
 
     then
   
-    `python3 source /path/bin/activate`
+    `python3 source /.venv/bin/activate`
 6. Run application with following code:
    
     `./src/app.sh`
