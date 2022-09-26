@@ -19,6 +19,7 @@ def play():
         Game.current_bet = 0
         Game.credits = 0
         Game.winnings = 0
+        Game.win = False
         landing()
         while True:
             os.system("clear")

@@ -255,13 +255,15 @@ Trello was then used to create a checklist of tasks with deadlines. Each task on
 
 | Test Case ID | Test Case Description | Test Steps | Test Data | Expected Results | Actual Results | Pass/Fail | Error Handling |
 |------|------|------|------|------|------|------|------|
-| TC01 | Check Deposit with Integer | 1. Get to deposit page 2. Enter integer | deposit = int() | Program should take the integer and continue running the code | As expected | Pass| nil |
-| TC02 | Check Deposit with 'word' input | 1. Get to deposit page 2. Enter 'hello' | deposit = ‘hello’ | Program should print error message and return back to loop | As expected | Pass | nil |
-| TC03 | Check Bet with Integer | 1. Get to bet page 2. Enter integer | bet = int() | Program should take the integer and continue running the code | As expected | Pass| nil |
-| TC04 | Check Bet with 'word' input | 1. Get to bet page 2. Enter 'hello' | bet = ‘hello’ | Program should print error message and return back to loop | As expected | Pass | nil |
-| TC05 | Check Bet with 'q' input | 1. Get to bet page 2. Enter 'q' | bet = lower.(q) | Should withdraw credits and display end screen | As expected | Pass | nil |
-| TC06 | Press keys on keyboard while reel is spinning | 1. Start reel spin. 2. Press keys while spinning | key presses whilst function is running | Nothing should happen | The letters show up on the terminal while reel is spinning. This affected the `press_to_continue()` function.  | FAIL | Implemented `flush_input()` to make sure the inputed keypresses are flushed before `press_to_continue()` is called. |
-| TC07 | Press enter on keyboard while reel is spinning | 1. Start reel spin. 2. Press 'enter' while function is running | Enter key input is recorded | Nothing should happen | The reel function gets printed multiple times while it is running | FAIL | Added warning to not press |
+| TC01 (manual) | Check Deposit with Integer | 1. Get to deposit page <br>2. Enter integer | deposit = int() | Program should take the integer and continue running the code | As expected | Pass| nil |
+| TC02 (manual) | Check Deposit with 'word' input | 1. Get to deposit page <br>2. Enter 'hello' | deposit = ‘hello’ | Program should print error message and return back to loop | As expected | Pass | nil |
+| TC03 (manual) | Check Bet with Integer | 1. Get to bet page <br>2. Enter integer | bet = int() | Program should take the integer and continue running the code | As expected | Pass| nil |
+| TC04 (manual) | Check Bet with 'word' input | 1. Get to bet page <br>2. Enter 'hello' | bet = ‘hello’ | Program should print error message and return back to loop | As expected | Pass | nil |
+| TC05 (manual) | Check Bet with 'q' input | 1. Get to bet page <br>2. Enter 'q' | bet = lower.(q) | Should withdraw credits and display end screen | As expected | Pass | nil |
+| TC06 (manual) | Press keys on keyboard while reel is spinning | 1. Start reel spin. <br>2. Press keys while spinning | key presses whilst function is running | Nothing should happen | The letters show up on the terminal while reel is spinning. This affected the `press_to_continue()` function.  | FAIL | Implemented `flush_input()` to make sure the inputed keypresses are flushed before `press_to_continue()` is called. |
+| TC07 (manual) | Press enter on keyboard while reel is spinning | 1. Start reel spin. <br>2. Press 'enter' while function is running | Enter key input is recorded | Nothing should happen | The reel function gets printed multiple times while it is running | FAIL | Added warning to not press |
+| TC08 (pytest) | Check return of reel_randomiser() is from Items.List with pytest | 1. Run reel_randomiser() <br>2. Assert return values are from Items.List |   | Should return true | Returns true | PASS | nil |
+| TC09 (pytest) | Check winnings > 0 if win is true or winnings = 0 if win is false | 1. Run program with random bet value <br>2. Check if win is true/false <br>3. Check if winnings coincides with win |   | Should return true | Returns true | PASS | nil |
 
 ## **Deployment**
 
